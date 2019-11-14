@@ -1,0 +1,46 @@
+:root {
+  --top-gradient-color: #333333;
+  --bg-color: #fff;
+}
+
+.containers {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+
+  padding: 3rem 0;
+}
+
+.gradientContainer1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+
+  padding-top: 4rem;
+  padding-bottom: 1.5rem;
+  background-color: var(--top-gradient-color);
+}
+
+.gradientContainer2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 2rem;
+
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  background-image: linear-gradient(
+    0,
+    var(--bg-color),
+    var(--top-gradient-color)
+  );
+}
+
+.containers > .contentContainer > .contentInfo > p {
+  color: var(--top-gradient-color);
+}
+
+.gradientContainer1 > .contentContainer > .contentInfo,
+.gradientContainer2 > .contentContainer > .contentInfo {
+  color: var(--bg-color) !important;
+}
