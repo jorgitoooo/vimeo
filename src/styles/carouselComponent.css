@@ -1,0 +1,79 @@
+:root {
+  --arrow-color-inactive: rgb(162, 172, 179);
+  --arrow-color-active: rgb(29, 158, 233);
+  --arrow-width: 30px;
+  --arrow-height: 30px;
+  --arrow-thickness: 2px;
+}
+
+.carouselContainer {
+  display: grid;
+
+  grid-template-columns: 1fr 2fr 1fr;
+  column-gap: 1rem;
+
+  justify-content: space-around;
+  align-content: center;
+  /* align-items: center; */
+
+  width: 100%;
+  height: 300px;
+  background-color: blue;
+}
+
+.arrowContainer {
+  margin: 0 auto;
+  position: relative;
+
+  /* border: 2px solid rgba(0, 0, 0, 0); */
+  border: 2px solid pink;
+  border-radius: 50%;
+
+  width: calc(var(--arrow-width) * 2);
+  height: calc(var(--arrow-height) * 2);
+
+  align-self: flex-start;
+  /* -ms-grid-column-align: end; */
+}
+
+.arrowContainer:hover {
+  cursor: pointer;
+}
+
+.arrowContainer:hover .arrow,
+.arrowContainer:visited .arrow {
+  border-left-color: var(--arrow-color-active);
+  border-bottom-color: var(--arrow-color-active);
+}
+
+.arrow {
+  position: absolute;
+
+  width: var(--arrow-width);
+  height: var(--arrow-height);
+
+  border-left: var(--arrow-thickness) solid var(--arrow-color-inactive);
+  border-bottom: var(--arrow-thickness) solid var(--arrow-color-inactive);
+}
+
+.left {
+  top: calc(var(--arrow-height) / 2);
+  left: calc(var(--arrow-height) / 1.5);
+  transform: rotate(45deg);
+
+  /* grid-column: 0/1; */
+}
+
+.right {
+  top: calc(var(--arrow-height) / 2);
+  right: calc(var(--arrow-height) / 1.5);
+  transform: rotate(calc(-45deg * 3));
+
+  /* grid-column: 3/4; */
+}
+
+.movieDetails {
+  width: 100%;
+  margin: 0 auto;
+  border: 2px solid pink;
+}

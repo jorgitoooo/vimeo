@@ -2,11 +2,13 @@ import React from "react";
 
 // Components
 import ContentComponent from "./Components/ContentComponent";
+import Carousel from "./Components/Carousel";
 
 // CSS
 import "./styles/index.css";
 import "./styles/containers.css";
 import "./styles/contentComponent.css";
+import "./styles/carouselComponent.css";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
       <div className="gradientContainer2">
         <ContentComponent {...contentInfo2} />
       </div>
+      <Carousel />
     </>
   );
 }
