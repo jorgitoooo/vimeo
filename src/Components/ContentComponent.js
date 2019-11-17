@@ -9,9 +9,6 @@ const ContentComponent = props => {
     contentReversed
   } = props;
 
-  // className={
-  //   contentReversed ? "contentContainerReversed" : "contentContainer"
-  // }
   return (
     <div className="contentContainer">
       <div className="contentInfo">

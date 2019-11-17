@@ -4,21 +4,21 @@
   --arrow-width: 30px;
   --arrow-height: 30px;
   --arrow-thickness: 2px;
+  --movieBg-z-index: -2;
+  --movieDetails-z-index: -1;
 }
 
 .carouselContainer {
+  position: relative;
   display: grid;
 
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   column-gap: 1rem;
 
-  justify-content: space-around;
   align-content: center;
-  /* align-items: center; */
 
   width: 100%;
   height: 300px;
-  background-color: blue;
 }
 
 .arrowContainer {
@@ -31,9 +31,6 @@
 
   width: calc(var(--arrow-width) * 2);
   height: calc(var(--arrow-height) * 2);
-
-  align-self: flex-start;
-  /* -ms-grid-column-align: end; */
 }
 
 .arrowContainer:hover {
@@ -72,8 +69,37 @@
   /* grid-column: 3/4; */
 }
 
-.movieDetails {
+.movieDetailsContainer {
+  position: relative;
   width: 100%;
-  margin: 0 auto;
+  height: 100%;
+  max-height: 100%;
+
+  /* background-color: lightblue; */
+}
+
+.movieDetails {
+  position: absolute;
+  z-index: var(--movieDetails-z-index);
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  transition: all 1s;
+
   border: 2px solid pink;
+}
+
+.movieBg {
+  position: absolute;
+  z-index: var(--movieBg-z-index);
+
+  width: 100%;
+  height: 100%;
+
+  transition: all 1000ms;
+  -webkit-transition: all 1000ms;
+
+  background-color: rebeccapurple;
 }
