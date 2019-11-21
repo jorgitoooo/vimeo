@@ -7,7 +7,17 @@ const Movies = ({ movies }) => {
     <>
       {movies &&
         movies.map(
-          movie => movie && <div className="movieBg" style={movie.style}></div>
+          (movie, idx) =>
+            movie && (
+              <div
+                key={idx}
+                className="movieBg"
+                style={{
+                  marginLeft: movie.style.marginLeft,
+                  backgroundImage: `url(${movie.imgUrl})`
+                }}
+              ></div>
+            )
         )}
       <div className="movieDetailsContainer">
         {movies &&

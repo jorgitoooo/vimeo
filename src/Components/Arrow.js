@@ -1,10 +1,10 @@
 import React from "react";
 
 const Arrow = props => {
-  const { orientation, shiftMovie } = props;
+  const { className, orientation, shiftMovie } = props;
 
   return (
-    <div onClick={shiftMovie} className="arrowContainer">
+    <div onClick={shiftMovie} className={className}>
       <div className={`arrow ${orientation}`}></div>
     </div>
   );

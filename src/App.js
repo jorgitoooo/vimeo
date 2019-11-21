@@ -32,7 +32,7 @@ const contentInfo0 = {
   altMessage: "MONSOON III",
   contentTitle: "MONSOON III",
   contentBody:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorum impedit quisquam sequi quidem facere eveniet necessitatibus vel saepe tenetur. Blanditiis aut magni qui incidunt laudantium enim beatae minus! Mollitia."
+    "If you asked the average person, many would characterize this summer's monsoon as a down season. Not a lot of storms overall and it seemed generally more quiet. And in many ways it actually was a slower season. All told I chased about 36 days for this film, which was less than the 48 in 2015. We had an early start in late June, and then it was dead for almost three weeks. When I looked back and realized I chased 12 less days...yeah, it definitely had less action than normal."
 };
 const contentInfo1 = {
   imgSrc: "https://i.vimeocdn.com/video/589972810_530x315.jpg",
