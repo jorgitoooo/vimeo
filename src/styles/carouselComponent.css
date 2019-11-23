@@ -14,17 +14,12 @@
 
   /* Colors */
   --light-blue: rgb(56, 142, 199);
-  /* --red-orange: rgb(187, 93, 15); */
   --red-orange: rgb(187, 112, 15);
-  /* --red-gold: rgb(192, 113, 24); */
-  /* --red-gold: rgb(143, 76, 0); */
   --red-gold: rgb(143, 121, 0);
-  /* --red-brown: rgb(196, 106, 22); */
   --red-brown: rgb(168, 109, 21);
-  /* --red-gray: rgb(153, 80, 78); */
   --red-gray: rgb(182, 75, 71);
 
-  --color: var(--red-orange);
+  /* --color: var(--red-orange); */
 }
 
 .carouselContainer {

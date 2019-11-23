@@ -1,5 +1,6 @@
 import React from "react";
 
+// Components
 import MovieDetails from "./MovieDetails";
 
 const Movies = ({ movies }) => {
