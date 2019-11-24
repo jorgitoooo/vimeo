@@ -3,13 +3,17 @@ import React, { useState, useEffect } from "react";
 // Components
 import ContentComponent from "./components/ContentComponent";
 import Carousel from "./components/carousel/Carousel";
+import Loading from "./components/Loading";
 
 // CSS
 import "./styles/index.css";
 import "./styles/containers.css";
+import "./styles/loadingComponent.css";
 import "./styles/contentComponent.css";
 import "./styles/carouselComponent.css";
 
+const LOREM =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut odio iste, officiis voluptate possimus error, quo harum corporis veniam obcaecati reprehenderit ut dicta voluptatibus magni fuga nobis. Aspernatur, tempore ipsa.";
 const URL0 =
   "https://vimeo.com/api/oembed.json?url=https://vimeo.com/185441790";
 const URL1 =
@@ -30,10 +34,10 @@ function App() {
     setLoading(false);
   }
   function fetchContent() {
-    const promises = [];
     const p0 = fetch(URL0);
     const p1 = fetch(URL1);
     const p2 = fetch(URL2);
+    const promises = [];
     promises.push(p0);
     promises.push(p1);
     promises.push(p2);
@@ -51,7 +55,7 @@ function App() {
             dataPromises.push(res.json());
           });
         } catch (e) {
-          // Ignore error
+          // Ignore error since it is used to escape the forEach loop
         }
         if (dataPromises) {
           Promise.all(dataPromises)
@@ -85,7 +89,7 @@ function App() {
                         altMessage: data.title,
                         contentTitle: data.title,
                         contentBody:
-                          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum distinctio temporibus aperiam molestiae facilis minima, nulla inventore unde autem pariatur magnam quo alias veniam iusto beatae in! Provident, minima voluptate?"
+                          data.description === "" ? LOREM : data.description
                       };
                       setContent1(video);
                       break;
@@ -104,9 +108,9 @@ function App() {
                   }
                 }
               });
+              setLoading(false);
             })
             .catch(e => console.error(e));
-          setLoading(false);
         }
       })
       .catch(e => console.error(e));
@@ -114,10 +118,11 @@ function App() {
 
   useEffect(() => {
     fetchContent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
   return (
     <>
@@ -140,22 +145,19 @@ const contentData0 = {
   imgSrc: "https://i.vimeocdn.com/video/595198868_505x160.jpg",
   altMessage: "MONSOON III",
   contentTitle: "MONSOON III",
-  contentBody:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut odio iste, officiis voluptate possimus error, quo harum corporis veniam obcaecati reprehenderit ut dicta voluptatibus magni fuga nobis. Aspernatur, tempore ipsa."
+  contentBody: LOREM
 };
 const contentData1 = {
   imgSrc: "https://i.vimeocdn.com/video/589972810_530x315.jpg",
   altMessage: "BEAMS",
   contentTitle: "BEAMS",
-  contentBody:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorum impedit quisquam sequi quidem facere eveniet necessitatibus vel saepe tenetur. Blanditiis aut magni qui incidunt laudantium enim beatae minus! Mollitia."
+  contentBody: LOREM
 };
 const contentData2 = {
   imgSrc: "https://i.vimeocdn.com/video/590587169_530x315.jpg",
   altMessage: "MOVE 2",
   contentTitle: "MOVE 2",
-  contentBody:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dolorum impedit quisquam sequi quidem facere eveniet necessitatibus vel saepe tenetur. Blanditiis aut magni qui incidunt laudantium enim beatae minus! Mollitia."
+  contentBody: LOREM
 };
 
 export default App;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ContentComponent = props => {
   const {
@@ -24,6 +25,13 @@ const ContentComponent = props => {
       />
     </div>
   );
+};
+
+ContentComponent.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  altMessage: PropTypes.string.isRequired,
+  contentTitle: PropTypes.string.isRequired,
+  contentBody: PropTypes.string.isRequired
 };
 
 export default ContentComponent;

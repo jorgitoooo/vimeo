@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // Components
 import MovieDetails from "./MovieDetails";
@@ -31,6 +32,10 @@ const Movies = ({ movies }) => {
       </div>
     </>
   );
+};
+
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default Movies;

@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+// Components
 import Button from "./Button";
 
 const MovieDetails = ({ movie, style }) => {
@@ -24,6 +27,11 @@ const MovieDetails = ({ movie, style }) => {
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object.isRequired,
+  style: PropTypes.object.isRequired
 };
 
 export default MovieDetails;

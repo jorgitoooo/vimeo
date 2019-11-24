@@ -1,4 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+
+// Components
 import PlayIcon from "./PlayIcon";
 
 const Button = ({ value, icon, ...props }) => {
@@ -8,6 +11,11 @@ const Button = ({ value, icon, ...props }) => {
       {value}
     </button>
   );
+};
+
+Button.propTypes = {
+  icon: PropTypes.bool,
+  value: PropTypes.string.isRequired
 };
 
 export default Button;

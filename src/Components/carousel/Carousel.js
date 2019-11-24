@@ -1,50 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Arrow from "./Arrow";
 import Movies from "./Movies";
 
 const Carousel = props => {
   const [movieIdx, setMovieIdx] = useState(0);
-
-  useEffect(() => {
-    // movies = movies.map((movie, idx) => ({
-    //   ...movie,
-    //   marginLeft: `${idx * 110}vh`
-    // }));
-    // console.log(movies);
-  }, []);
+  const [movies, setMovies] = useState(moviesArr);
 
   function shiftLeft() {
     if (movieIdx < movies.length - 1) {
       setMovieIdx(movieIdx + 1);
-      // Movie position is state (move to MovieDetails component)
-      movies = movies.map(movie => {
-        const curMargin = parseInt(movie.style.marginLeft);
-        const newMovie = {
-          ...movie,
-          style: {
-            ...movie.style,
-            marginLeft: `${curMargin - 110}vw`
-          }
-        };
-        return newMovie;
-      });
+      setMovies(
+        movies.map(movie => {
+          const curMargin = parseInt(movie.style.marginLeft);
+          const newMovie = {
+            ...movie,
+            style: {
+              ...movie.style,
+              marginLeft: `${curMargin - 110}vw`
+            }
+          };
+          return newMovie;
+        })
+      );
     }
   }
   function shiftRight() {
     if (movieIdx > 0) {
       setMovieIdx(movieIdx - 1);
-      movies = movies.map(movie => {
-        const curMargin = parseInt(movie.style.marginLeft);
-        const newMovie = {
-          ...movie,
-          style: {
-            ...movie.style,
-            marginLeft: `${curMargin + 110}vw`
-          }
-        };
-        return newMovie;
-      });
+      setMovies(
+        movies.map(movie => {
+          const curMargin = parseInt(movie.style.marginLeft);
+          const newMovie = {
+            ...movie,
+            style: {
+              ...movie.style,
+              marginLeft: `${curMargin + 110}vw`
+            }
+          };
+          return newMovie;
+        })
+      );
     }
   }
   return (
@@ -67,14 +63,7 @@ const Carousel = props => {
   );
 };
 
-/*
-  --light-blue: rgb(31, 127, 192);
-  --red-orange: rgb(187, 93, 15);
-  --red-gold: rgb(192, 113, 24);
-  --red-brown: rgb(185, 100, 19);
-  --red-gray: rgb(153, 80, 78);
-*/
-let movies = [
+const moviesArr = [
   {
     imgUrl:
       "https://m.media-amazon.com/images/M/MV5BMWE2OTdiY2MtM2ViNy00NmExLWIxZjYtYTVkNGJkNzgwYjVmXkEyXkFqcGdeQXVyNjgzMjQ0MTA@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
@@ -97,16 +86,6 @@ let movies = [
       background: "var(--red-orange)"
     }
   },
-  // {
-  //   imgUrl:
-  //     "https://m.media-amazon.com/images/M/MV5BOTQxOWQwNzctMzAxZi00MTNmLTg1MmYtNzZkMDVjODU0NmZkXkEyXkFqcGdeQXVyNDc4MzI1NDM@._V1_SY1000_CR0,0,909,1000_AL_.jpg",
-  //   title: "All Rise",
-  //   body:
-  //     '"Monster" is what the prosecutor calls 17 year old honors student Steve Harmon. He is being charged with felony murder. But is Steve really a monster? Adapted from the best-selling novel of the same name by Walter Dean Myers.',
-  //   style: {
-  //     marginLeft: "220vw"
-  //   }
-  // },
   {
     imgUrl:
       "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
