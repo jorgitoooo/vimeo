@@ -26,4 +26,4 @@ Make sure that you have both [`git`](https://git-scm.com/book/en/v2/Getting-Star
 
 - `npm start`
 
-6. The previous step should open your default browser and the app should be running. In the case that it didn't, open [http://localhost:3000](http://localhost:3000) which will allow you to view it in your browser.
+6. The previous step should open your default browser and the app should be running. In the case that this did not happen automatically, open [http://localhost:3000](http://localhost:3000) to view the app in your browser.
