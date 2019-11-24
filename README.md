@@ -14,7 +14,7 @@ Make sure that you have both [`git`](https://git-scm.com/book/en/v2/Getting-Star
 
 - `git clone https://github.com/garciaj92/vimeo.git`
 
-3. Change our current working directory to the project's directory.
+3. Change your current working directory to the project's directory.
 
 - `cd vimeo`
 
