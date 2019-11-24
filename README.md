@@ -1,6 +1,6 @@
 ## Before Getting Started
 
-Make sure that you have both [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [`Node.js`](https://nodejs.org/en/) installed on the computer that you are running this app on.
+Make sure that you have both [`git`](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [`Node.js`](https://nodejs.org/en/) installed on the computer that you are running this app on (Note: `git` will be used to install this repository, and `Node.js` comes with the Node Package Manager `npm` which will be used to install this app's dependencies and run the app locally).
 
 ## Running This App Locally
 
